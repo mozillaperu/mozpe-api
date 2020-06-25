@@ -9,7 +9,9 @@
   "author": "",
   "license": "MPL-2.0",
   "devDependencies": {
-    "dotenv": "^8.2.0",
     "now": "^19.1.1"
+  },
+  "dependencies": {
+    "twitter-lite": "^0.14.0"
   }
 }
