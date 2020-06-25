@@ -9,6 +9,9 @@ module.exports = async (req, res) => {
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET
   });
 
+  console.log(`key: ${process.env.TWITTER_CONSUMER_KEY}`)
+  console.log(`secret: ${process.env.TWITTER_CONSUMER_SECRET}`)
+
   const tokenResponse = await client.getBearerToken();
 
   const url = `https://api.twitter.com/1.1/users/show.json?screen_name=${name}`;
@@ -18,6 +21,7 @@ module.exports = async (req, res) => {
       'Authorization': `Bearer ${tokenResponse.access_token}`
     }
   }
+  console.log(`token: ${tokenResponse.access_token}`);
 
   get(url, options, (response) => {
     response.on('data', (data) => {
